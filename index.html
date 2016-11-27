@@ -1,0 +1,70 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="movie">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>movie</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<!-- 头部导航 -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://v3.bootcss.com/examples/dashboard/#">豆瓣电影</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/in_theaters/1">正在热映</a></li>
+            <li><a href="#/books">图书</a></li>
+            <li><a href="#/music">音乐</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" ng-controller="search" ng-submit="sub()">
+            <input type="text" class="form-control" placeholder="Search..." ng-model="input">
+          </form>
+        </div>
+      </div>
+    </nav>
+	
+	<div class="main">
+		<!-- 左侧导航 -->
+	    <div class="container-fluid">
+	      <div class="row">
+	        <div class="col-sm-3 col-md-2 sidebar left">
+	          <ul class="nav nav-sidebar">
+	            <li tab-abc><a href="#/in_theaters/1">正在热映</a></li>
+	            <li tab-abc><a href="#/coming_soon/1">即将到来</a></li>
+	            <li tab-abc><a href="#/top250/1">Top250</a></li>
+	          </ul>
+	         
+	        </div>
+	        <div class="col-sm-9 col-md-10 right">
+	          	
+	          	<!-- 视图内容 -->
+				<div ng-view="">
+				</div>
+	        </div>
+	      </div>
+	    </div>
+    </div>
+</body>
+<script src="lib/script.min.js"></script>
+<!-- <script>
+	$script(["lib/angular.min.js","lib/angular-route.min.js","lib/angular-loader.min.js","app.js","view/details.js","view/theaterCon.js","js/directives.js","js/server.js","view/details.js"]);
+</script> -->
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/server.js"></script>
+<script src="view/details.js"></script>
+<script src="view/theaterCon.js"></script>
+</html>

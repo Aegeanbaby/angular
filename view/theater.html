@@ -1,0 +1,27 @@
+<!-- 面包屑导航 -->
+<ol class="breadcrumb" ng-show="!loading">
+  <li>豆瓣电影</li>
+  <li>正在热映</li>
+  <li class="active">当前{{page}}页</li>
+  <li class="total fr">总共 {{total}} 页</li>
+</ol>
+<!-- 电影列表区 -->
+<ul class="box">
+	<li ng-repeat="detail in data">
+		<a href="#/subject/{{detail.id}}"><img ng-src={{detail.images.large}} alt=""></a>
+		<div class="content">
+			<p><a href="#/subject/{{detail.id}}">{{detail.title}}</a><span class="average">{{detail.rating.average}}分</span></p>
+			<p>类型：<span ng-repeat="item in detail.genres">{{item}}</span></p>
+		</div>
+	</li>
+</ul>
+<!-- 按钮区 -->
+<p class="group" ng-show="!loading" ng-click="go(page - 1)"><button ng-class="{'btn-info btn prev':page>=2,'btn btn-warning prev':page<2}">上一页</button><button ng-class="{'btn-info btn prev':page<total,'btn btn-warning prev':page>=total}" ng-click="go(page + 1)">下一页</button></p>
+<!-- loading区 -->
+<div class="loader" ng-show="loading">
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+</div>

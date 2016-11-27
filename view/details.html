@@ -1,0 +1,25 @@
+<!-- 详情页面 -->
+<div class="details" ng-show="!loading">
+	<div class="img"><img ng-src="{{info.image}}" title="豆瓣小气 只给小图"></div>
+	<div class="text">
+		<h3>{{info.alt_title}}</h3>
+		<p>产地：{{info.attrs.country.join("、")}}</p>
+		<p>语言：{{info.attrs.language.join("、")}}</p>
+		<p>时长：{{info.attrs.movie_duration.join("、")}}</p>
+		<p>类型：{{info.attrs.pubdate.join("、")}}</p>
+		<p>上映时间：{{info.attrs.movie_type.join("、")}}</p>
+		<p>导演：<span>{{info.attrs.director.join("、")}}</span></p>
+		<p>演员：<span>{{info.attrs.cast.join("、")}}</span></p>
+		<p>原著：<span>{{info.attrs.writer.join("、")}}</span></p>
+	</div>
+	<div class="introd">
+		<p>{{info.summary}}</p>
+	</div>
+</div>
+<div class="loader" ng-show="loading">
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+</div>
