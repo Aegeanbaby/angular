@@ -16,7 +16,7 @@
 				var count = 8;
 				var start = ($scope.page - 1)*count;
 
-			ajaxServer.jsonp("http://api.douban.com/v2/movie/"+what,{start : start,count : count,q : $routeParams.q},function(data){
+			ajaxServer.jsonp("https://api.douban.com/v2/movie/"+what,{start : start,count : count,q : $routeParams.q},function(data){
 				$scope.data = data.subjects;
 				$scope.total = Math.ceil(data.total / count);
 				$scope.loading = false;

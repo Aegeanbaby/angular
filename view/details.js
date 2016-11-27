@@ -19,7 +19,7 @@
 				$scope.loading = true;
 				// 获取url中id参数
 				$scope.id = $routeParams.id;
-			ajaxServer.jsonp("http://api.douban.com/v2/movie/"+$scope.id,function(data){
+			ajaxServer.jsonp("https://api.douban.com/v2/movie/"+$scope.id,function(data){
 
 				// 接收数据
 				$scope.info = data;
